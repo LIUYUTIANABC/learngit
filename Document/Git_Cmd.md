@@ -31,11 +31,20 @@
 - git log                           查看提交的日志文件
 - git log --pretty=oneline          显示简略信息
 
+- git reset --hard HEAD^            恢复成上一个版本
+- git reset --hard HEAD^^           恢复成上上一个版本
+- git reset --hard HEAD~100         恢复成上上 100 个版本
+- git reset --hard abeccf4          恢复成 “abeccf4” 的版本
+- cat readme.txt                    可以在 git Bash 查看文件内同
+- git reflog                        查看每一次提交的 massage 和 SHA1 内容
 
 #### Note
 
 - git add 后面增加的文件用空格分开
 - git commit 如果有文件被修改了，也需要使用 add 命令之后才能提交到仓库
+- git reset 恢复上一个版本后，使用 git log 已经无法查看之前更新的版本了
+  - 要使用 git reflog 查看所有提交的版本 SHA1 的值
+- 要使用 git reset 必须提交版本库中所有修改的文件，否则恢复之后，修改内容丢失
 
 ### Linux Command
 
