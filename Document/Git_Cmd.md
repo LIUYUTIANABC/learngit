@@ -23,6 +23,14 @@
 - rm -rf .git                       删除 Git 仓库
 - git add file2.txt file3.txt       添加文件到仓库
 - git commit -m "add 3 files."      提交文件保存
+- git status                        获得当前 git 的状态
+- git diff file_name                查看修改内容
+- git restore files_name            没有使用 add 把文件添加到仓库，可以恢复文件
+- git restore --staged files_name   使用 add 把文件添加到仓库，可以推出添加但保留文件变更
+
+- git log                           查看提交的日志文件
+- git log --pretty=oneline          显示简略信息
+
 
 #### Note
 
