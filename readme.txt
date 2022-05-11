@@ -1,4 +1,5 @@
-Git is a version control system.
+Git is a distributed version control system
 Git is free software.
 Use code open.
 Add two new file
+I try to wake up my wife
