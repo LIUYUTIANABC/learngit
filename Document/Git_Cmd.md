@@ -46,6 +46,12 @@
   - 要使用 git reflog 查看所有提交的版本 SHA1 的值
 - 要使用 git reset 必须提交版本库中所有修改的文件，否则恢复之后，修改内容丢失
 
+- 工作区和暂存区： git add 把文件存储到暂存区;  git commit 把暂存区文件提交到 master 分支中
+- git 管理的是修改：
+  - 如果执行，第一次修改 -> git add -> 第二次修改 -> git commit
+  - 使用 git status 查看发现，第二次修改不会提交
+  - 正确方法： 第一次修改 -> git add -> 第二次修改 -> git add -> git commit
+
 ### Linux Command
 
 - git  用的是 Linux 的命令， 所以  git bash 可以使用  Linux  命令
