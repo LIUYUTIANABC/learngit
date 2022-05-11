@@ -11,17 +11,23 @@
 
 #### Command
 
-- mkdir learngit            创建路径
-- cd learngit               切换目录
-- cd ..                     回到上一层目录
-- pwd                       显示当前目录
-- ls -ah                    查看隐藏文件
-- ls -a                     查看隐藏文件
-- ls                        查看文件
+- mkdir learngit                    创建路径
+- cd learngit                       切换目录
+- cd ..                             回到上一层目录
+- pwd                               显示当前目录
+- ls -ah                            查看隐藏文件
+- ls -a                             查看隐藏文件
+- ls                                查看文件
 
-- git init                  创建仓库
-- rm -rf .git               删除 Git 仓库
+- git init                          创建仓库
+- rm -rf .git                       删除 Git 仓库
+- git add file2.txt file3.txt       添加文件到仓库
+- git commit -m "add 3 files."      提交文件保存
 
+#### Note
+
+- git add 后面增加的文件用空格分开
+- git commit 如果有文件被修改了，也需要使用 add 命令之后才能提交到仓库
 
 ### Linux Command
 
