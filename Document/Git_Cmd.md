@@ -84,3 +84,33 @@
 - cd..                      回到上一层目录
 - rmdir name                删除空白目录
 - rmdir /s wikihow          删除目录和文件
+
+### Github 加速
+
+#### 参考网址
+
+- 知乎： https://zhuanlan.zhihu.com/p/75994966
+
+- 1、获取GitHub官方CDN地址
+
+> - 查看 IP 地址：https://ipaddress.com/
+>
+> - GitHub.com    IP地址：140.82.113.4
+> - assets-cdn.github.com    IP地址：185.199.111.153
+> - github.global.ssl.fastly.net    IP地址：199.232.69.194
+>
+> 140.82.113.3    github.com
+> 185.199.108.153 assets-cdn.github.com
+> 199.232.69.194  github.global.ssl.fastly.net
+
+- 2、修改系统Hosts文件
+
+> - 接着,打开系统hosts文件(需管理员权限)。
+> - 路径：C:\Windows\System32\drivers\etc
+> - 使用 code 打开编辑会提示使用管理员权限
+> - 并在末尾添加三行记录并保存。(需管理员权限，注意IP地址与域名间需留有空格)
+
+- 3、刷新系统DNS缓存
+
+> - 最后,Windows+X 打开系统命令行（管理员身份）或powershell
+> - 运行 ipconfig /flushdns 手动刷新系统DNS缓存。
