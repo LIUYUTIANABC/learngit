@@ -36,8 +36,13 @@
 - cat readme.txt                    可以在 git Bash 查看文件内同
 - git reflog                        查看每一次提交的 massage 和 SHA1 内容
 
-- git restore files_name            没有使用 add 把文件添加到仓库，可以恢复文件
-- git restore --staged files_name   使用 add 把文件添加到仓库，可以推出添加但保留文件变更
+- git restore file_name             没有使用 add 把文件添加到仓库，可以恢复文件
+- git restore --staged file_name    使用 add 把文件添加到仓库，可以推出添加但保留文件变更
+
+- git rm file_name                  删除文件
+- git restore file_name             恢复文件
+- git restore --staged file_name    恢复 add 后的文件
+
 
 #### Note
 
@@ -52,6 +57,10 @@
   - 如果执行，第一次修改 -> git add -> 第二次修改 -> git commit
   - 使用 git status 查看发现，第二次修改不会提交
   - 正确方法： 第一次修改 -> git add -> 第二次修改 -> git add -> git commit
+
+- 删除文件：
+  - 使用 git rm 删除文件；恢复使用 git restore；确实删除使用 git commit
+  - 先手动删除文件，然后使用git rm <file>和git add<file>效果是一样的。
 
 ### Linux Command
 
