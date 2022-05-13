@@ -53,6 +53,15 @@ pass: Yutian641010Liu
 - 把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了
 - 在 GitHub 上免费托管的Git仓库，任何人都可以看到，但是不能改
 
+GitHub 创建存储库（Repository）：learngit
+- 关联本地仓库和 GitHub 仓库： git remote add origin http://github.com/LIUYUTIANABC/learngit.git
+- 远程库的名字：origin（默认）
+
+- 把本地库所有内容推送到远程库： git push -u origin master
+- 注意： 第一次提交远程库，需要 git 授权给 GitHub 之后提交就没有了
+- 第一次提交用 '-u' 的作用是把本地 master 和远程的 master 关联起来，以后推送或者拉取是可以简化命令
+- 简化的命令： git push origin master
+
 #### Note
 
 - git add 后面增加的文件用空格分开
