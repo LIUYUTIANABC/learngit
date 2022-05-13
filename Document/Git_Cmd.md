@@ -43,6 +43,15 @@
 - git restore file_name             恢复文件
 - git restore --staged file_name    恢复 add 后的文件
 
+创建 GitHub 账户：
+user: 1428456495@qq.com
+pass: Yutian641010Liu
+
+- ssh-keygen -t rsa -C "youremail@example.com"         创建SSH Key
+- .SSH 在用户主目录: C:\Users\LiuYutian\.ssh
+- Git支持SSH协议
+- 把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了
+- 在 GitHub 上免费托管的Git仓库，任何人都可以看到，但是不能改
 
 #### Note
 
@@ -90,6 +99,9 @@
 #### 参考网址
 
 - 知乎： https://zhuanlan.zhihu.com/p/75994966
+        https://zhuanlan.zhihu.com/p/403089781
+
+- GitHub520： https://gitee.com/inChoong/GitHub520
 
 - 1、获取GitHub官方CDN地址
 
