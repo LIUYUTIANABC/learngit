@@ -9,6 +9,8 @@
 - git config user.password
 - git config user.email
 
+- git config --list                 查看配置的一些参数
+
 #### Command
 
 - mkdir learngit                    创建路径
@@ -64,12 +66,14 @@ GitHub 创建存储库（Repository）：learngit
 - 第一次提交用 '-u' 的作用是把本地 master 和远程的 master 关联起来，以后推送或者拉取是可以简化命令
 - 简化的命令： git push origin master
 
-- git config --list         查看配置的一些参数
 - git remote -v             查看远程库信息
 - git remote rm origin      删除远程库，实际上是解除本地和远程的绑定关系
   - GitHub 上的远程库本身并没有任何改动，要真正删除需要登录Github页面删除按钮删除
   - origin 是远程库的名字，origin是习惯命名
 
+- 从零开发，最好的方式是先创建远程库，然后再克隆
+- git clone git@github.com:LIUYUTIANABC/gitskills.git    使用SSH 协议和 GitHub 通信
+  - git clone https://github.com/LIUYUTIANABC/gitskills.git    使用https 协议和 GitHub 通信
 
 #### Note
 
