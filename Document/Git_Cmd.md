@@ -50,17 +50,26 @@ pass: Yutian641010Liu
 - ssh-keygen -t rsa -C "youremail@example.com"         创建SSH Key
 - .SSH 在用户主目录: C:\Users\LiuYutian\.ssh
 - Git支持SSH协议
-- 把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了
+- 把每台电脑的SSH Key都添加到GitHub，就可以在每台电脑上往GitHub推送 push 了,否则无法 push
 - 在 GitHub 上免费托管的Git仓库，任何人都可以看到，但是不能改
 
 GitHub 创建存储库（Repository）：learngit
-- 关联本地仓库和 GitHub 仓库： git remote add origin http://github.com/LIUYUTIANABC/learngit.git
+- 关联本地仓库和 GitHub 仓库，
+  - 使用 https 协议关联: git remote add origin http://github.com/LIUYUTIANABC/learngit.git
+  - 使用SSH协议关联: git remote add origin git@github.com:LIUYUTIANABC/learngit.git
 - 远程库的名字：origin（默认）
 
 - 把本地库所有内容推送到远程库： git push -u origin master
 - 注意： 第一次提交远程库，需要 git 授权给 GitHub 之后提交就没有了
 - 第一次提交用 '-u' 的作用是把本地 master 和远程的 master 关联起来，以后推送或者拉取是可以简化命令
 - 简化的命令： git push origin master
+
+- git config --list         查看配置的一些参数
+- git remote -v             查看远程库信息
+- git remote rm origin      删除远程库，实际上是解除本地和远程的绑定关系
+  - GitHub 上的远程库本身并没有任何改动，要真正删除需要登录Github页面删除按钮删除
+  - origin 是远程库的名字，origin是习惯命名
+
 
 #### Note
 
