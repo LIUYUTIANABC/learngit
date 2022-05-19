@@ -4,8 +4,5 @@ Use code open.
 Add two new file
 I try to wake up my wife
 My stupid boss still prefers SVN
-<<<<<<< HEAD
 Creating a new branch is quick and simple.
-=======
-Creating a new branch is quick adn simple.
->>>>>>> feature1
+Can I modify the error?
