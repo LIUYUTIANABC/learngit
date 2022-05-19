@@ -79,6 +79,8 @@ GitHub 创建存储库（Repository）：learngit
 
 git 支持多分支， 功能强大， 速度快， 实际上就是相当于多添加了一个指针
 
+创建与合并分支
+
 - git checkout -b dev             创建 dev 分支，然后切换到 dev 分支
   - git checkout 的 '-b' 参数表示创建并切换
   - git branch dev                单独创建分支
@@ -89,6 +91,21 @@ git 支持多分支， 功能强大， 速度快， 实际上就是相当于多�
 - git merge drv                   把 dev 分支合并到 master
   - 提示信息 Fast-forward          表示是快速模式，直接改变 master 指针，不会检查冲突
 - git branch -d dev               删除分支
+
+解决冲突
+
+- git switch -c feature1          创建分支
+- git add -- git commit           提交修改
+- git switch master               切换回主分支
+- git add -- git commit           提交冲突的修改
+- git merge feature1              合并出现冲突，手动解决，保存文件
+- git add -- git commit           再次提交修改后的文件
+- 这样就把其他分支，合并到了主分支，但其他分支的内容依旧不变
+- git log --graph                 查看分支合并情况，详细信息
+- git log --graph --pretty=oneline --abbrev-commit        查看分支合并，缩略版的，含主要信息
+- git branch -d feature1          删除 feature1 分支
+- 因为主干合并后，分支的内容依旧没有改变，如果以后再开发，需要重新生成分支
+- 这个分支内容已经不和主干一致了
 
 #### Note
 
