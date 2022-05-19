@@ -75,6 +75,21 @@ GitHub 创建存储库（Repository）：learngit
 - git clone git@github.com:LIUYUTIANABC/gitskills.git    使用SSH 协议和 GitHub 通信
   - git clone https://github.com/LIUYUTIANABC/gitskills.git    使用https 协议和 GitHub 通信
 
+##### 分支管理————重点
+
+git 支持多分支， 功能强大， 速度快， 实际上就是相当于多添加了一个指针
+
+- git checkout -b dev             创建 dev 分支，然后切换到 dev 分支
+  - git checkout 的 '-b' 参数表示创建并切换
+  - git branch dev                单独创建分支
+  - git checkout dev              单独切换到 dev 分支
+  - git switch -c dev             创建分支并切换的另一种写法
+  - git switch master             单独切换分支的令一种写法
+- git branch                      查看当前所有的分支
+- git merge drv                   把 dev 分支合并到 master
+  - 提示信息 Fast-forward          表示是快速模式，直接改变 master 指针，不会检查冲突
+- git branch -d dev               删除分支
+
 #### Note
 
 - git add 后面增加的文件用空格分开
