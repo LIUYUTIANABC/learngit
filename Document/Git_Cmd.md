@@ -110,8 +110,15 @@ git 支持多分支， 功能强大， 速度快， 实际上就是相当于多�
 分支策略管理
 
 Git 用 Fast forward 模式，删除分支后，会丢掉分支信息
-禁用 Fast forward 模式，git 就会在 merge 时生成一个新的 commit
-这样就会保存分支历史，看得到分支信息
+禁用 Fast forward 模式，使用普通模式合并
+普通模式：git 会在 merge 时生成一个新的 commit 这样就会保存分支历史，看得到分支信息
+
+- git merge --no-f -m "merge with no-ff" dev        禁用 Fast forward， 可以看到分支信息
+
+> 分支管理：
+> 首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
+> 那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，
+> 比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；
 
 #### Note
 
