@@ -66,6 +66,7 @@ GitHub 创建存储库（Repository）：learngit
 - 第一次提交用 '-u' 的作用是把本地 master 和远程的 master 关联起来，以后推送或者拉取是可以简化命令
 - 简化的命令： git push origin master
 
+- git remote                查看远程库
 - git remote -v             查看远程库信息
 - git remote rm origin      删除远程库，实际上是解除本地和远程的绑定关系
   - GitHub 上的远程库本身并没有任何改动，要真正删除需要登录Github页面删除按钮删除
@@ -140,6 +141,14 @@ Bug 分支
   - 在 dev 分支中使用
   - git cherry-pick 2e846d5          复制在 master 修改 bug 后的代码
   - 注意： 这里的 commit 是 master 提交的那个 SHA 值， 不是 merge 的那个 SHA 值
+
+Feature 分支
+
+- 真正的开发项目中，每添加一个新功能，最好重新建一个 feature 分支，完成后，合并，再删除 feature 分支
+- git switch -c feature-vulcan            创建一个分支
+- 修改，添加，提交，回到 dev 分支合并
+- git branch -d feature-vulcan            删除分支失败，因为还没有合并
+- git branch -D feature-vulcan            强制删除
 
 #### Note
 
