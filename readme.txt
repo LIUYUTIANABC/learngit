@@ -10,3 +10,5 @@ AAA == AAA
 Another == 000
 
 Modif readme.txt for test NO Fast forward
+
+Modify a bug issue-101
