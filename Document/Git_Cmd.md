@@ -113,12 +113,33 @@ Git 用 Fast forward 模式，删除分支后，会丢掉分支信息
 禁用 Fast forward 模式，使用普通模式合并
 普通模式：git 会在 merge 时生成一个新的 commit 这样就会保存分支历史，看得到分支信息
 
-- git merge --no-f -m "merge with no-ff" dev        禁用 Fast forward， 可以看到分支信息
+- git merge --no-ff -m "merge with no-ff" dev        禁用 Fast forward， 可以看到分支信息
 
 > 分支管理：
 > 首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
 > 那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，
 > 比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；
+
+Bug 分支
+
+在工作用正在添加一些功能，有个需要优先处理的 Bug, 可以使用 stash 来存储现在的工作区，恢复之前状态，等修改完 Bug 合并之后，再恢复现在的工作区。
+
+- 前提：在现在的分支（dev）中有添加或修改文件，已经 add，但没有commit
+- git stash             保存当前的工作区
+- 回到 master 分支，创建 Bug 分支，修改 Bug， 正常提交之后，merge 到主分支，完成修改，删除 Bug 分支 issue-101
+- 回到之前的 dev 分支，git switch dev
+- git stash list        查看保存的工作区
+- git stash apply stash@{0}       恢复之前的工作区，但是stash 内容还在
+- git stash drop stash@{0}        删除 stash 工作区
+- git stash pop         恢复的同时删除
+
+怎么把 master 分支中，修改的 Bug 也添加到现在的 dev分支中
+
+- 手动修改，再一次提交，可以完成
+- 使用 cherry-pick 命令复制一个特定的提交
+  - 在 dev 分支中使用
+  - git cherry-pick 2e846d5          复制在 master 修改 bug 后的代码
+  - 注意： 这里的 commit 是 master 提交的那个 SHA 值， 不是 merge 的那个 SHA 值
 
 #### Note
 
