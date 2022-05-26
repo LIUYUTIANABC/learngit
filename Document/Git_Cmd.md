@@ -150,6 +150,22 @@ Feature 分支
 - git branch -d feature-vulcan            删除分支失败，因为还没有合并
 - git branch -D feature-vulcan            强制删除
 
+多人协作
+
+在自己的电脑创建 master 和 dev 分支，通过 push 推送到 GitHub 然后，另外一台电脑（需要添加SSH Key）或者另一个目录通过 clone 命令，克隆远程库
+
+- 另一台电脑：
+  - 此时，他的目录下只能看到 master 分支，看不到 dev 分支
+  - git checkout -b dev origin/dev            创建远程 origin 的 dev 分支到本地
+  - 此时，git branch 查看分支，就有 dev 分支了，就可以在 dev 分支上进行修改，提交
+  - 通过 git push origin dev                  推送 dev 分支的修改
+- 我的电脑，做了修改后：
+  - git push origin dev    试图推送，但是失败，因为，远程的版本库有更新版本
+  - 此时用 git pull                            把远程库的最新内容拉区下来
+    - 如果可以拉取，说明本地 dev 和远程 origin/dev 是有连接的
+    - 如果拉取失败，使用    git branch --set-upstream-to=origin/dev dev     链接本地 dev 分支和远程 origin/dev 分支
+  - 合并冲突，git push origin dev           推送我的修改
+
 #### Note
 
 - git add 后面增加的文件用空格分开
