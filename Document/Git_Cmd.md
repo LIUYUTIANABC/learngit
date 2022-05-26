@@ -165,6 +165,10 @@ Feature 分支
     - 如果可以拉取，说明本地 dev 和远程 origin/dev 是有连接的
     - 如果拉取失败，使用    git branch --set-upstream-to=origin/dev dev     链接本地 dev 分支和远程 origin/dev 分支
   - 合并冲突，git push origin dev           推送我的修改
+- git fetch origin master           从远程获取最新的版本到本地，不会自动merge
+- git log -p master..origin/master  查看本地 master 分支和远程库的 master的区别
+- git merge origin/master           合并 origin/master 到本地 master
+- git pull                          相当于git fetch 加 git merge
 
 #### Note
 
@@ -224,11 +228,14 @@ Feature 分支
 > - GitHub.com    IP地址：140.82.113.4
 > - assets-cdn.github.com    IP地址：185.199.111.153
 > - github.global.ssl.fastly.net    IP地址：199.232.69.194
->
-> 140.82.113.3    github.com
-> 185.199.108.153 assets-cdn.github.com
-> 199.232.69.194  github.global.ssl.fastly.net
 
+```
+140.82.113.3    github.com
+185.199.108.153 assets-cdn.github.com
+199.232.69.194  github.global.ssl.fastly.net
+```
+
+```
 # GitHub Start
 140.82.112.3 github.com
 140.82.114.4 gist.github.com
@@ -247,6 +254,7 @@ Feature 分支
 199.232.68.133 avatars7.githubusercontent.com
 199.232.68.133 avatars8.githubusercontent.com
 # Github End
+```
 
 - 2、修改系统Hosts文件
 
