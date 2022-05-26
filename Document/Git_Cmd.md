@@ -150,6 +150,37 @@ Feature 分支
 - git branch -d feature-vulcan            删除分支失败，因为还没有合并
 - git branch -D feature-vulcan            强制删除
 
+多人协作
+
+在自己的电脑创建 master 和 dev 分支，通过 push 推送到 GitHub 然后，另外一台电脑（需要添加SSH Key）或者另一个目录通过 clone 命令，克隆远程库
+
+- 另一台电脑：
+  - 此时，他的目录下只能看到 master 分支，看不到 dev 分支
+  - git checkout -b dev origin/dev            创建远程 origin 的 dev 分支到本地
+  - 此时，git branch 查看分支，就有 dev 分支了，就可以在 dev 分支上进行修改，提交
+  - 通过 git push origin dev                  推送 dev 分支的修改
+- 我的电脑，做了修改后：
+  - git push origin dev    试图推送，但是失败，因为，远程的版本库有更新版本
+  - 此时用 git pull                            把远程库的最新内容拉区下来
+    - 如果可以拉取，说明本地 dev 和远程 origin/dev 是有连接的
+    - 如果拉取失败，使用    git branch --set-upstream-to=origin/dev dev     链接本地 dev 分支和远程 origin/dev 分支
+  - 合并冲突，git push origin dev           推送我的修改
+- git fetch origin master           从远程获取最新的版本到本地，不会自动merge
+- git log -p master..origin/master  查看本地 master 分支和远程库的 master的区别
+- git merge origin/master           合并 origin/master 到本地 master
+- git pull                          相当于git fetch 加 git merge
+
+Rebase 的使用
+
+在多人协作的时候，后push的人不得不先pull，再merge，再 push，这样就产生了时间的交叉。
+情景：自己修改了代码做了两次提交，在push的时候，出错，需要先 pull
+
+- git log --graph --pretty=oneline --abbrev-commit          查看提交日志
+- 当你 pull 之后，本地 git 会自动生成一个新的 commit，位于你做的两次提交之后，此时，你会发现有问题，因为，这个 pull 明明应该是我两次提交之前的操作才对
+- 使用 git rebase               把 pull 的 commit 放到你做的修改之前
+- 这样你的提交历史，是按照时间先后成一条直线
+- push 到远程库，再看 log 你会发现之前 pull 的那个 commit 放在了你自己commit之后，你的修改才是远程看最新的修改
+
 #### Note
 
 - git add 后面增加的文件用空格分开
@@ -199,6 +230,7 @@ Feature 分支
         https://zhuanlan.zhihu.com/p/403089781
 
 - GitHub520： https://gitee.com/inChoong/GitHub520
+- https://www.cnblogs.com/qujingtongxiao/p/13041623.html
 
 - 1、获取GitHub官方CDN地址
 
@@ -207,15 +239,38 @@ Feature 分支
 > - GitHub.com    IP地址：140.82.113.4
 > - assets-cdn.github.com    IP地址：185.199.111.153
 > - github.global.ssl.fastly.net    IP地址：199.232.69.194
->
-> 140.82.113.3    github.com
-> 185.199.108.153 assets-cdn.github.com
-> 199.232.69.194  github.global.ssl.fastly.net
+
+```
+140.82.113.3    github.com
+185.199.108.153 assets-cdn.github.com
+199.232.69.194  github.global.ssl.fastly.net
+```
+
+```
+# GitHub Start
+140.82.112.3 github.com
+140.82.114.4 gist.github.com
+185.199.108.153 assets-cdn.github.com
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 gist.githubusercontent.com
+199.232.68.133 cloud.githubusercontent.com
+199.232.68.133 camo.githubusercontent.com
+199.232.68.133 avatars0.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars3.githubusercontent.com
+199.232.68.133 avatars4.githubusercontent.com
+199.232.68.133 avatars5.githubusercontent.com
+199.232.68.133 avatars6.githubusercontent.com
+199.232.68.133 avatars7.githubusercontent.com
+199.232.68.133 avatars8.githubusercontent.com
+# Github End
+```
 
 - 2、修改系统Hosts文件
 
 > - 接着,打开系统hosts文件(需管理员权限)。
-> - 路径：C:\Windows\System32\drivers\etc
+> - 路径：C:\Windows\System32\drivers\etc\hosts
 > - 使用 code 打开编辑会提示使用管理员权限
 > - 并在末尾添加三行记录并保存。(需管理员权限，注意IP地址与域名间需留有空格)
 
