@@ -181,6 +181,26 @@ Rebase 的使用
 - 这样你的提交历史，是按照时间先后成一条直线
 - push 到远程库，再看 log 你会发现之前 pull 的那个 commit 放在了你自己commit之后，你的修改才是远程看最新的修改
 
+##### 标签管理——————存放软件发布版本
+
+创建标签（tag）一般是在 master 分支上执行
+
+- git tag v1.0              默认在最新提交的 commit 上创建标签
+- git tag                   查看所有创建的标签
+- git log --pretty=oneline --abbrev-commit          查看所有提交日志的主要信息，包含 tag 指针，master head 指针等
+- git tag v0.9 6e6eac6      在之前 commit 上打标签，id（SHA1 码）= 6e6eac6
+- git show v0.9             查看标签详细信息
+- git tag -a v0.1 -m "version 0.1 released" d6cfcc7         创建带有说明的标签
+- 注意：标签指向的是 commit 的id，所以，如果分支中存在打标签的 commit 就可以查看到标签
+
+- git tag -d v0.1           删除本地标签
+- git push origin v1.0      推送标签 v0.1 到远程
+- git push origin --tags    推送全部本地标签到远程
+- 删除远程标签
+  - git tag -d v0.9           先删除本地 v0.9 标签
+  - git push origin :refs/tags/v0.9     删除远程的 v0.9 标签
+  - 登录 GitHub 查看标签是否删除
+
 #### Note
 
 - git add 后面增加的文件用空格分开
