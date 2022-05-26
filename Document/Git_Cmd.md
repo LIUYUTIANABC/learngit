@@ -170,6 +170,17 @@ Feature 分支
 - git merge origin/master           合并 origin/master 到本地 master
 - git pull                          相当于git fetch 加 git merge
 
+Rebase 的使用
+
+在多人协作的时候，后push的人不得不先pull，再merge，再 push，这样就产生了时间的交叉。
+情景：自己修改了代码做了两次提交，在push的时候，出错，需要先 pull
+
+- git log --graph --pretty=oneline --abbrev-commit          查看提交日志
+- 当你 pull 之后，本地 git 会自动生成一个新的 commit，位于你做的两次提交之后，此时，你会发现有问题，因为，这个 pull 明明应该是我两次提交之前的操作才对
+- 使用 git rebase               把 pull 的 commit 放到你做的修改之前
+- 这样你的提交历史，是按照时间先后成一条直线
+- push 到远程库，再看 log 你会发现之前 pull 的那个 commit 放在了你自己commit之后，你的修改才是远程看最新的修改
+
 #### Note
 
 - git add 后面增加的文件用空格分开
