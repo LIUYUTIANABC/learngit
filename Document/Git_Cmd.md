@@ -215,6 +215,7 @@ Feature 分支
         https://zhuanlan.zhihu.com/p/403089781
 
 - GitHub520： https://gitee.com/inChoong/GitHub520
+- https://www.cnblogs.com/qujingtongxiao/p/13041623.html
 
 - 1、获取GitHub官方CDN地址
 
@@ -228,10 +229,29 @@ Feature 分支
 > 185.199.108.153 assets-cdn.github.com
 > 199.232.69.194  github.global.ssl.fastly.net
 
+# GitHub Start
+140.82.112.3 github.com
+140.82.114.4 gist.github.com
+185.199.108.153 assets-cdn.github.com
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 gist.githubusercontent.com
+199.232.68.133 cloud.githubusercontent.com
+199.232.68.133 camo.githubusercontent.com
+199.232.68.133 avatars0.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars3.githubusercontent.com
+199.232.68.133 avatars4.githubusercontent.com
+199.232.68.133 avatars5.githubusercontent.com
+199.232.68.133 avatars6.githubusercontent.com
+199.232.68.133 avatars7.githubusercontent.com
+199.232.68.133 avatars8.githubusercontent.com
+# Github End
+
 - 2、修改系统Hosts文件
 
 > - 接着,打开系统hosts文件(需管理员权限)。
-> - 路径：C:\Windows\System32\drivers\etc
+> - 路径：C:\Windows\System32\drivers\etc\hosts
 > - 使用 code 打开编辑会提示使用管理员权限
 > - 并在末尾添加三行记录并保存。(需管理员权限，注意IP地址与域名间需留有空格)
 
