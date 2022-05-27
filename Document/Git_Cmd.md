@@ -241,6 +241,11 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - Gitee 的 pull requests 和 GitHub 的操作一样
 - 先 Fork，再 clone，再添加修改，再push 到远程库，再在自己的远程库 pull request
 
+##### 自定义 Git
+
+- git config --global color.ui true         让 Git 显示颜色，文件夹等会有颜色
+- git config --global color.ui false         取消 Git 显示颜色
+
 #### Note
 
 - git add 后面增加的文件用空格分开
