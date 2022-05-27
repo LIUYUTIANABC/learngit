@@ -212,6 +212,32 @@ Rebase 的使用
 - 在自己的 GitHub 上操作，自己 repo 上，点击 pull request，点击 new pull request
 - comparing changes 判断差异，提交 pull request
 
+##### 使用 Gitee 管理开源项目
+
+Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快；
+
+- 注册账号，添加 SSH KEY 公钥
+- 创建项目，最好和本地库保持一致
+- git remote add origin git@gitee.com:LIUYUTIANABC/learngit.git             把本地库和gitee的远程库关联
+- 如果之前关联过 GitHub 那么会提示关联库已经存在
+- git remote -v                     查看远程库信息
+- git remote rm origin              删除已有的远程库
+- 再次关联 gitee 使用 git remote add origin git@gitee.com:LIUYUTIANABC/learngit.git
+
+- 同时关联 Gitee 和 GitHub
+- 删除现有的远程库 git remote rm origin
+- git remote add gitee git@gitee.com:LIUYUTIANABC/learngit.git
+- git remote add github git@github.com:LIUYUTIANABC/learngit.git
+- git remote -v              查看远程库会发现有两个
+- 远程库的名字，分别是 gitee 和 github 以后要推送的时候应该使用这两个名字
+
+- 关联远程库 gitee 之后要推送本地库到远程，出现问题，提示需要先建立关联，在 pull
+- git branch --set-upstream-to=origin/master master             建立分支关联
+- git pull 提示 fatal: refusing to merge unrelated histories 需要允许合并不相关的历史记录
+- git pull origin master --allow-unrelated-histories  允许合并不相关的历史记录
+- 同理：git push origin master --allow-unrelated-histories  允许合并不相关的历史记录
+- 同理：git merge origin master --allow-unrelated-histories  允许合并不相关的历史记录
+
 #### Note
 
 - git add 后面增加的文件用空格分开
