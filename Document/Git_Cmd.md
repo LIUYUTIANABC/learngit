@@ -224,6 +224,13 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - git remote rm origin              删除已有的远程库
 - 再次关联 gitee 使用 git remote add origin git@gitee.com:LIUYUTIANABC/learngit.git
 
+- 关联远程库 gitee 之后要推送本地库到远程，出现问题，提示需要 先建立关联，在 pull
+- git branch --set-upstream-to=origin/master master             建立分支关联
+- git pull；（git push; git merge） 提示 fatal: refusing to merge unrelated histories 需要允许合并不相关的历史记录
+  - git pull origin master --allow-unrelated-histories  允许合并不相关的历史记录, 就可以了
+  - git push origin master --allow-unrelated-histories
+  - git merge origin master --allow-unrelated-histories
+
 - 同时关联 Gitee 和 GitHub
 - 删除现有的远程库 git remote rm origin
 - git remote add gitee git@gitee.com:LIUYUTIANABC/learngit.git
@@ -231,12 +238,8 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - git remote -v              查看远程库会发现有两个
 - 远程库的名字，分别是 gitee 和 github 以后要推送的时候应该使用这两个名字
 
-- 关联远程库 gitee 之后要推送本地库到远程，出现问题，提示需要先建立关联，在 pull
-- git branch --set-upstream-to=origin/master master             建立分支关联
-- git pull 提示 fatal: refusing to merge unrelated histories 需要允许合并不相关的历史记录
-- git pull origin master --allow-unrelated-histories  允许合并不相关的历史记录
-- 同理：git push origin master --allow-unrelated-histories  允许合并不相关的历史记录
-- 同理：git merge origin master --allow-unrelated-histories  允许合并不相关的历史记录
+- Gitee 的 pull requests 和 GitHub 的操作一样
+- 先 Fork，再 clone，再添加修改，再push 到远程库，再在自己的远程库 pull request
 
 #### Note
 
