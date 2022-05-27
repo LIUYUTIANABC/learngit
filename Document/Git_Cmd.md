@@ -201,6 +201,17 @@ Rebase 的使用
   - git push origin :refs/tags/v0.9     删除远程的 v0.9 标签
   - 登录 GitHub 查看标签是否删除
 
+##### 如何 pull request
+
+在别人的 GitHub 上 Fork 一个开源库，这样在自己 GitHub上就有了一个一样的 origin；
+
+- git clone git@github.com:michaelliao/bootstrap.git                克隆远程上的开源库
+- git remote add upstream https://github.com/michaelliao/lerngit.git            添加你 fork的别人的库
+- git remote -v                 查看远程库连接 origin是自己的库，upstream 是别人的库
+- 创建分支，提交修改，push 到自己的库
+- 在自己的 GitHub 上操作，自己 repo 上，点击 pull request，点击 new pull request
+- comparing changes 判断差异，提交 pull request
+
 #### Note
 
 - git add 后面增加的文件用空格分开
