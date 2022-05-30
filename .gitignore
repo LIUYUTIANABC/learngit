@@ -1,0 +1,12 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# My configurations:
+learngit-1
+learngit_1
