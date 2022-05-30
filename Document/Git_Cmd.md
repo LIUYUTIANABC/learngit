@@ -1,5 +1,11 @@
 ### Git Command
 
+#### 原网址
+
+以下内容来源于互联网，欢迎查看原网址：
+在此鸣谢：
+- https://www.liaoxuefeng.com/wiki/896043488029600
+
 #### User
 
 - git config --global user.name "LiuYutian"
@@ -262,7 +268,7 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - git check-ignore -v app.class         查看 .gitignore 中哪里出了规则错误
 
 在 .gitignore 中指定文件不能忽略用
-!app.class          不排除文件 app.class
+- !app.class          不排除文件 app.class
 
 配置别名
 
@@ -293,6 +299,15 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - cat .git/config
 
 删除别名：直接在配置文章的 [alias] 下删除别名行就行
+
+##### 搭建 Git 服务器
+
+- https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664
+
+##### 使用 SourceTree
+
+- 官方网站： https://www.sourcetreeapp.com/
+- 参考文档： https://www.liaoxuefeng.com/wiki/896043488029600/1317161920364578
 
 #### Note
 
