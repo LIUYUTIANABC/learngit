@@ -195,6 +195,8 @@ Feature 分支
 - git merge origin/master           合并 origin/master 到本地 master
 - git pull                          相当于git fetch 加 git merge
 
+- git push origin --delete dev        删除远程分支
+
 Rebase 的使用
 
 在多人协作的时候，后push的人不得不先pull，再merge，再 push，这样就产生了时间的交叉。
