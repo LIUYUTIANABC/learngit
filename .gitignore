@@ -11,5 +11,6 @@
 *.class
 learngit-1
 learngit_1
+gitskills
 
-!est.class
+!test.class
