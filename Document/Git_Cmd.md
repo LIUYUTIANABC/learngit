@@ -264,6 +264,36 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 在 .gitignore 中指定文件不能忽略用
 !app.class          不排除文件 app.class
 
+配置别名
+
+- git config --global alias.st status           使用 st 代替 status；使用方法 git st
+- git config --global alias.co checkout         使用方法 git co
+- git config --global alias.ci commit           使用方法 git ci
+- git config --global alias.br branch           使用方法 git br
+- git config --global alias.unstage 'reset HEAD'           使用方法 git unstage test.py
+- git config --global alias.last 'log -1'       最后一次提交日志；git last
+- git config --global alias.lg "log --color --graph --pretty=format:'%Cred%Greset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"         使用 git lg 输出日志格式很好看
+
+> - 如果一个参数没有空格，就可以不用引号，比如
+> - git commit -m update
+> - 如果一个参数有空格，就必须加引号：
+> - git commit -m "update README.txt"
+> - 如果参数有双引号就用单引号：
+> - git commit -m 'update "README.txt"'
+> - 如果参数有单引号就用双引号：
+> - git commit -m "update 'README.txt'"
+> - 单引号和双引号还有一些细微区别，可以去看bash手册。
+
+查看配置的别名
+
+使用 --global 表示全局变量：配置文件在用户主目录下的 .gitconfig中
+- cat .gitconfig
+
+不使用 --global 表示只在当前仓库有效：配置文件都放在.git/config文件中
+- cat .git/config
+
+删除别名：直接在配置文章的 [alias] 下删除别名行就行
+
 #### Note
 
 - git add 后面增加的文件用空格分开
