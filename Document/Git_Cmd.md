@@ -309,6 +309,11 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - 官方网站： https://www.sourcetreeapp.com/
 - 参考文档： https://www.liaoxuefeng.com/wiki/896043488029600/1317161920364578
 
+##### 常用命令
+
+- https://liaoxuefeng.gitee.io/resource.liaoxuefeng.com/git/git-cheat-sheet.pdf
+- Git 官网：http://git-scm.com/
+
 #### Note
 
 - git add 后面增加的文件用空格分开
