@@ -246,6 +246,24 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - git config --global color.ui true         让 Git 显示颜色，文件夹等会有颜色
 - git config --global color.ui false         取消 Git 显示颜色
 
+忽略特殊文件
+
+.gitignore 常用的配置文件： https://github.com/github/gitignore
+
+- 忽略文件原则
+  - 自动生成文件，编译产生的中间文件
+  - 带有敏感信息的配置文件，比如口令
+
+在根目录创建 .gitginore 文件，里面填入要忽略的文件名，提交到 git 就可以了；
+判读有没有忽略使用 git status 查看 working directory clean
+
+- git add app.class                     忽略了 *.class；又需要添加会提示不能添加
+- git add -f app.class                  强制添加该文件到 git
+- git check-ignore -v app.class         查看 .gitignore 中哪里出了规则错误
+
+在 .gitignore 中指定文件不能忽略用
+!app.class          不排除文件 app.class
+
 #### Note
 
 - git add 后面增加的文件用空格分开

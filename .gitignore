@@ -8,5 +8,8 @@
 *.elf
 
 # My configurations:
+*.class
 learngit-1
 learngit_1
+
+!est.class
