@@ -16,6 +16,7 @@
 - [Github 加速](#github-加速)
   - [参考网址](#参考网址)
 - [新建一个开发项目](#新建一个开发项目)
+- [工作中遇到一些其他的命令](#工作中遇到一些其他的命令)
 
 ### Git Command
 
@@ -449,3 +450,14 @@ Gitee 是国内 OSChina 创建的类似 GitHub的开源托管网站，速度快�
 - git push -u github master           可以把工程文件推送到刚创建的存储库中
 
 ![img](Creat_a_New_request.PNG)
+
+### 工作中遇到一些其他的命令
+
+创建一个新的仓库，add 新的文件之后，发现 add 了一些编译生成文件，就是没有添加 gitignore内容；
+
+- git add -A                    add 所有变更文件
+
+这里是第一次添加，所以，不能使用 git restore 来回滚，因为在此之前没有内容了。应该使用：
+
+- git rm --cached <file>         删除第一次添加的文件
+- git rm --cached <文件夹> -r     删除第一次添加的文件夹
